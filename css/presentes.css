@@ -363,19 +363,21 @@
 }
 
 .gift-product-card.is-bought .gift-product-links,
-.gift-product-card.is-bought .gift-reserve-box,
-.gift-product-card.is-bought .pix-reserve-btn {
+.gift-product-card.is-bought .gift-reserve-box {
   display: none;
 }
 
 .gift-product-card.is-bought .gift-payment-row {
-  display: flex;
-  justify-content: center;
   margin-bottom: 22px;
 }
 
+.gift-product-card.is-bought .pix-reserve-btn {
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .gift-product-card.is-bought .gift-product-price {
-  width: min(100%, 360px);
+  width: auto;
 }
 
 .gift-product-card.is-bought .gift-bought-message {
