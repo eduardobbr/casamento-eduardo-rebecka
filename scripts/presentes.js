@@ -39,9 +39,15 @@ document.querySelectorAll(".gift-product-card").forEach((card) => {
 
         if (data.status === "reserved") {
             card.classList.add("is-bought");
+
+            if (sessionStorage.getItem(`giftReserved_${giftId}`) === "true") {
+                card.classList.add("just-reserved");
+            } else {
+                card.classList.remove("just-reserved");
+            }
         } else {
             card.classList.remove("is-bought");
-            reservedName.textContent = "";
+            card.classList.remove("just-reserved");
         }
     });
 
@@ -77,6 +83,8 @@ document.querySelectorAll(".gift-product-card").forEach((card) => {
                 reservedAt: serverTimestamp()
             });
 
+            sessionStorage.setItem(`giftReserved_${giftId}`, "true");
+            card.classList.add("just-reserved");
             input.value = "";
         } catch (error) {
             console.error("Erro ao reservar presente:", error);

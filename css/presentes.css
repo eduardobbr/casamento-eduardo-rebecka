@@ -372,8 +372,12 @@
   display: block;
 }
 
-.gift-product-card.is-bought .gift-success-message {
+.gift-product-card.just-reserved .gift-success-message {
   display: block;
+}
+
+.gift-product-card.just-reserved .gift-bought-message {
+  display: none;
 }
 
 /* MODAL INSTRUÇÕES */
