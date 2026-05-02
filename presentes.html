@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Lista de Presentes | Eduardo e Rebecka</title>
+  <meta name="description" content="Lista de presentes do casamento de Eduardo e Rebecka" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Questrial&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./css/ionicons.min.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/presentes.css" />
+</head>
+
+<body>
+
+  <div class="gift-instructions-modal" id="giftInstructionsModal">
+    <div class="gift-instructions-box">
+      <button type="button" class="gift-modal-close" id="giftModalClose" aria-label="Fechar aviso">
+        ×
+      </button>
+
+      <span class="gift-modal-kicker">Antes de escolher</span>
+      <h2>Como funciona a lista de presentes?</h2>
+
+      <p>
+        Deixamos em média três links onde encontramos boas opções de preço para cada presente.
+        Você pode comprar pelo site indicado ou da forma que preferir. Depois de finalizar a compra,
+        volte aqui e reserve o item para que ele saia da lista para os demais convidados.
+      </p>
+
+      <button type="button" class="gift-modal-button" id="giftModalOk">
+        Entendi
+      </button>
+    </div>
+  </div>
+
+  <div class="pix-gift-modal is-hidden" id="pixGiftModal">
+    <div class="pix-gift-box">
+      <button type="button" class="pix-gift-close" id="pixGiftClose" aria-label="Fechar Pix">
+        ×
+      </button>
+
+      <span class="pix-gift-kicker">Presentear via Pix</span>
+      <h2 id="pixGiftTitle">Presente selecionado</h2>
+
+      <p class="pix-gift-text">
+        Este Pix será gerado com o valor médio encontrado para este presente.
+        Escaneie o QR Code ou copie o código Pix para nos presentear.
+        Depois, volte à lista e reserve o item com seu nome.
+      </p>
+
+      <div class="pix-gift-amount" id="pixGiftAmount">R$ 0,00</div>
+
+      <div class="pix-gift-qrcode" id="pixGiftQrCode"></div>
+
+      <button type="button" class="copy-pix-code-btn" id="copyPixCodeBtn">
+        Copiar código Pix
+      </button>
+
+      <p class="copy-pix-feedback" id="copyPixFeedback">Código Pix copiado!</p>
+    </div>
+  </div>
+
+  <div class="petals" aria-hidden="true"></div>
+  <div class="ambient ambient-1"></div>
+  <div class="ambient ambient-2"></div>
+
+  <main class="gift-page" id="top">
+    <header class="gift-page-hero">
+      <a href="./index.html" class="back-link">
+        <i class="ion-ios-arrow-thin-left"></i>
+        Voltar ao site
+      </a>
+
+      <p class="eyebrow">Eduardo & Rebecka</p>
+      <h1>Lista de presentes</h1>
+      <p>
+        Deixamos em média três links onde encontramos boas opções de preço para cada presente.
+        Você pode comprar pelo site indicado ou da forma que preferir. Depois de finalizar a compra,
+        volte aqui e reserve o item para que ele saia da lista para os demais convidados.
+      </p>
+    </header>
+
+    <div class="gift-delivery-box">
+      <p class="gift-delivery-intro">
+        Para facilitar, deixamos abaixo uma opção de endereço para entrega dos presentes:
+      </p>
+
+      <p class="gift-delivery-name">
+        Eduardo Bryan Braga Rocha
+      </p>
+
+      <p class="gift-delivery-address">
+        Rua Leonardo Pianowski, 625 - Casa 2<br>
+        Pinheirinho, Curitiba - PR<br>
+        CEP 81150-330
+      </p>
+
+      <button type="button" class="copy-address-btn" id="copyAddressBtn">
+        Copiar endereço
+      </button>
+
+      <p id="copyAddressMsg" class="copy-feedback">Endereço copiado!</p>
+    </div>
+
+    <section class="gift-list-section">
+      <div class="gift-list-grid">
+
+        <article class="gift-product-card" data-gift-id="fondue-viena">
+          <div class="gift-product-image">
+            <img
+              src="https://m.magazineluiza.com.br/a-static/420x420/conjunto-de-fondue-panela-giratorio-viena-16-pcs-completo-forma-inox/decorfreepresentes/8082888302/c48bc783ff061690df62b1e8cc0eeabe.jpeg"
+              alt="Conjunto de fondue">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Cozinha</span>
+            <h2>Conjunto de Fondue Panela Giratório Viena 16 peças</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 212,34</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://www.magazineluiza.com.br/conjunto-de-fondue-panela-giratorio-viena-16-pcs-completo-forma-inox/p/acgjda8gd7/ud/apfd/?&seller_id=decorfreepresentes"
+                target="_blank" rel="noopener noreferrer">Comprar na Magalu</a>
+              <a href="https://www.mercadolivre.com.br/fondue-carrossel-panela-giratorio-viena-16-pecas/p/MLB27074888"
+                target="_blank" rel="noopener noreferrer">Comprar no Mercado Livre</a>
+              <a href="https://www.havan.com.br/jogo-de-fondue-giratorio-viena-forma-16-peas/p" target="_blank"
+                rel="noopener noreferrer">Comprar na Havan</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="panela-tramontina">
+          <div class="gift-product-image">
+            <img src="https://assets.tramontina.com.br/upload/tramon/imagens/CUT/20591420PDM001G.jpg"
+              alt="Panela de pressão Tramontina">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Cozinha</span>
+            <h2>Panela De Pressão Vancouver Effect Tramontina 4,5 Litros</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 189,90</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://www.tramontina.com.br/panela-de-pressao-tramontina-vancouver-effect-em-aluminio-com-revestimento-interno-e-externo-em-antiaderente-starflon-max-preto-20-cm-4-5-l/20591420.html?srsltid=AfmBOooiUT8N8celOfMtHVjiL-GiVB2E1myfUKjv2GoAYwVK57cAOWE3"
+                target="_blank" rel="noopener noreferrer">Comprar na Tramontina</a>
+              <a href="https://www.amazon.com.br/Tramontina-Vancouver-Alum%C3%ADnio-Revestimento-Antiaderente/dp/B0CD4SCM33"
+                target="_blank" rel="noopener noreferrer">Comprar na Amazon</a>
+              <a href="https://www.havan.com.br/panela-de-pressao-vancouver-efect-tramontina-4-5-litros-preto/p"
+                target="_blank" rel="noopener noreferrer">Comprar na Havan</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="jogo-talheres-tramontina">
+          <div class="gift-product-image">
+            <img
+              src="https://www.havan.com.br/media/catalog/product/cache/820af7facfa7aca6eb3c138e3457dc8d/c/o/conjunto-de-talheres-para-churrasco-tramontina-com-12-pecas_1010558.webp"
+              alt="Jogo Talheres Tramontina">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Cozinha</span>
+            <h2>Jogo Talheres Tramontina para Churrasco Jumbo Inox com 12 Peças</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 169,90</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://www.tramontina.com.br/jogo-de-talheres-jumbo-tramontina-churrasco-com-laminas-em-aco-inox-e-cabos-de-madeira-polywood-vermelho-12-pecas/21198776.html?srsltid=AfmBOop7Syu9XCjFl-71L68oU4QtMXiG998nReywEltL0h4o6-OBjNIr"
+                target="_blank" rel="noopener noreferrer">Comprar na Tramontina</a>
+              <a href="https://www.lojasmm.com/jogo-churrasco-jumbo-inox-12-pecas-tramontina-69395/p?idsku=74844&gad_source=1&gad_campaignid=21528271376&gbraid=0AAAAAD6Bh3T0zM4zCcZS6xYDhPyzxqDNW&gclid=Cj0KCQjw77bPBhC_ARIsAGAjjV_rnsq-HxzzIoIf1CuoDvy8gyH-dojL5J6c688tOqlJpWyko9-gTYsaAs9SEALw_wcB"
+                target="_blank" rel="noopener noreferrer">Comprar na LojasMM</a>
+              <a href="https://www.havan.com.br/conjunto-de-talheres-para-churrasco-tramontina-com-12-pecas-madeira/p"
+                target="_blank" rel="noopener noreferrer">Comprar na Havan</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="espremedor-britania">
+          <div class="gift-product-image">
+            <img
+              src="https://philco.vtexassets.com/arquivos/ids/162475-1200-1200?v=636458172251170000&width=1200&height=1200&aspect=true"
+              alt="Espremedor Britânia">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Cozinha</span>
+            <h2>Espremedor de Frutas Britânia Turbo Pro 260W - Bivolt</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 169,90</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://www.britania.com.br/espremedor-de-frutas-britania-turbo-pro-260w-/p?srsltid=AfmBOoqrX3F8d0m7n-hk4EPEjWMf4lz9zFm26qNLad73NEzlGQUk_2Yy"
+                target="_blank" rel="noopener noreferrer">Comprar na Britânia</a>
+              <a href="https://www.amazon.com.br/Espremedor-Frutas-Citrus-Britnia-33303003/dp/B079Y8DWDL?th=1"
+                target="_blank" rel="noopener noreferrer">Comprar na Amazon</a>
+              <a href="https://www.havan.com.br/espremedor-de-frutas-britania-turbo-pro-260w-bivolt/p" target="_blank"
+                rel="noopener noreferrer">Comprar na Havan</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="mixer-britania">
+          <div class="gift-product-image">
+            <img src="https://m.media-amazon.com/images/I/51N-Nxg43ML._AC_SX679_.jpg" alt="Mixer Britânia">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Cozinha</span>
+            <h2>Mixer Britânia 3 em 1 Mixer Triturador e Batedor BMX400P</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 142,41</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://www.britania.com.br/mixer-britania-3-em-1-/p" target="_blank"
+                rel="noopener noreferrer">Comprar na Britânia</a>
+              <a href="https://www.amazon.com.br/Mixer-velocidades-Bmx400-Preto-Brit%C3%A2nia/dp/B08YHR9C4S?th=1"
+                target="_blank" rel="noopener noreferrer">Comprar na Amazon</a>
+              <a href="https://www.havan.com.br/mixer-britania-3-em-1-mixer-triturador-e-batedor-bmx400p/p"
+                target="_blank" rel="noopener noreferrer">Comprar na Havan</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="cafeteira-arno">
+          <div class="gift-product-image">
+            <img
+              src="https://lojaarno.vtexassets.com/arquivos/ids/182898-1200-auto?v=639098969313800000&width=1200&height=auto&aspect=true"
+              alt="Cafeteira Arno">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Cozinha</span>
+            <h2>Cafeteira Elétrica Arno Soleil Marfim 1,25 Litros SFCM</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 265,00</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://www.arno.com.br/cafefeteia-arno-soleil-marfim-7211004076-pai/p?srsltid=AfmBOoroKZIZoZuaatW9ZoTdqI4ngFFnnAlSM5fO3ZaSm1xAB9mOR6m7"
+                target="_blank" rel="noopener noreferrer">Comprar na Arno</a>
+              <a href="https://www.amazon.com.br/Cafeteira-Arno-Soleil-Marfim-Caf%C3%83%C2%A9/dp/B08NXLJQ12?th=1"
+                target="_blank" rel="noopener noreferrer">Comprar na Amazon</a>
+              <a href="https://www.havan.com.br/cafeteira-eletrica-arno-soleil-marfim-1-25-litro/p" target="_blank"
+                rel="noopener noreferrer">Comprar na Havan</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="forno-philco">
+          <div class="gift-product-image">
+            <img
+              src="https://philco.vtexassets.com/arquivos/ids/274202-1200-1200?v=639003012689930000&width=1200&height=1200&aspect=true"
+              alt="Forno Philco">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Cozinha</span>
+            <h2>Forno Elétrico Philco 50l Cinza Espelhado Full Glass PFE50PE 127V</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 699,90</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://www.mercadolivre.com.br/forno-eletrico-philco-50l-cinza-espelhado-full-glass-pfe50pe/p/MLB18613115?pdp_filters=item_id%3AMLB4057397743&matt_tool=38524122#origin=share&sid=share&wid=MLB4057397743&action=copy"
+                target="_blank" rel="noopener noreferrer">Comprar no Mercado Livre</a>
+              <a href="https://www.amazon.com.br/PHILCO-El%C3%A9trico-PFE50PE-Autolimpante-Modelo/dp/B0BHTQXQM1"
+                target="_blank" rel="noopener noreferrer">Comprar na Amazon</a>
+              <a href="https://www.havan.com.br/forno-eletrico-full-glass-50-litros-philco-pfe50pe/p" target="_blank"
+                rel="noopener noreferrer">Comprar na Havan</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="lava-loucas">
+          <div class="gift-product-image">
+            <img
+              src="https://brastemp.vtexassets.com/arquivos/ids/267500-1600-auto?v=638973414195430000&width=1600&height=auto&aspect=true"
+              alt="Lava Louças Brastemp">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Cozinha</span>
+            <h2>Lava Louças 8 Serviços Brastemp Cinza - BLF08BS</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 1804,05</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://www.brastemp.com.br/lava-loucas-brastemp-8-servicos-cinza-blf08bs/p?idsku=326031125&gad_source=1&gad_campaignid=21164263367&gbraid=0AAAAADJ0Bqo6jW4N22545N8UIyyV5pxKg&gclid=Cj0KCQjw77bPBhC_ARIsAGAjjV_VwrHvVMBCj2JD1Dmr8Ku4139dFR-rRYhOU7YJNjtYIcdPE4XdofMaAvkNEALw_wcB"
+                target="_blank" rel="noopener noreferrer">Comprar na Brastemp</a>
+              <a href="https://www.amazon.com.br/Lava-Lou-Servi-Brastemp-BLF08BS/dp/B0BTFM3PW9/ref=asc_df_B0BTFM3PW9?mcid=8b13e691cf2b3e1fb7c8ee1265820d9e&tag=googleshopp00-20&linkCode=df0&hvadid=721185796203&hvpos=&hvnetw=g&hvrand=13843719508676258269&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9102033&hvtargid=pla-2374768376294&psc=1&gad_source=1"
+                target="_blank" rel="noopener noreferrer">Comprar na Amazon</a>
+              <a href="https://www.mercadolivre.com.br/lava-loucas-blf08bs-8-servicos-cor-prateado-brastemp/p/MLB19628776?pdp_filters=item_id%3AMLB2849521976&matt_tool=38524122#origin=share&sid=share&wid=MLB2849521976&action=copy"
+                target="_blank" rel="noopener noreferrer">Comprar no Mercado Livre</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="robo-aspirador-de-po">
+          <div class="gift-product-image">
+            <img src="https://m.media-amazon.com/images/I/61K3M5gPZPL._AC_SY300_SX300_QL70_ML2_.jpg"
+              alt="Robô Aspirador De Pó Inteligente S40c Xiaomi">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Sala</span>
+            <h2>Robô Aspirador De Pó Inteligente S40c Xiaomi</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 1185,00</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://www.magazineluiza.com.br/mirobot-vacuum-s40c-branco-aspirador-robo-com-mapeamento-xiaomi/p/je44060fhg/ep/eprb/?&seller_id=ninjadigital&utm_source=google&utm_medium=cpc&utm_term=84400&utm_campaign=google_eco_per_ven_pla_arp_sor_3p_ep-b-0326&utm_content=&partner_id=84400&gclsrc=aw.ds&gad_source=1&gad_campaignid=23604909823&gbraid=0AAAAAD4zZmSKy4XIEO4NDPb1yzuMa9Z0T&gclid=Cj0KCQjw77bPBhC_ARIsAGAjjV8Xa04igpGZ_oNTupd9qS9sPldy07dcPsn3428JfD_Uy_FksEGi1hkaAqN4EALw_wcB"
+                target="_blank" rel="noopener noreferrer">Comprar na Magalu</a>
+              <a href="https://www.amazon.com.br/ASPIRADOR-INTELIGENTE-XIAOMI-BRANCO-XM865BRA/dp/B0F4K1H6X5"
+                target="_blank" rel="noopener noreferrer">Comprar na Amazon</a>
+              <a href="https://www.mercadolivre.com.br/rob-aspirador-de-po-inteligente-s40c-xiaomi-branco-branco/p/MLB54458534?pdp_filters=item_id%3AMLB4506931705&matt_tool=38524122#origin=share&sid=share&wid=MLB4506931705&action=copy"
+                target="_blank" rel="noopener noreferrer">Comprar no Mercado Livre</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="lava-e-seca-samsung">
+          <div class="gift-product-image">
+            <img src="https://imgs.casasbahia.com.br/1560107795/1xg.jpg?imwidth=500"
+              alt="Lava e Seca Samsung EcoBubble 11kg Automática Cesto Inox WD11A4453BX - 110V">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Lavanderia</span>
+            <h2>Lava e Seca Samsung EcoBubble 11kg Automática Cesto Inox WD11A4453BX - 110V</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 3799,90</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://www.casasbahia.com.br/lava-e-seca-samsung-ecobubble-11kg-automatica-cesto-inox-wd11a4453bx/p/1560107795?utm_medium=Cpc&utm_source=GP_PLA&IdSku=1560107795&idLojista=14738&tipoLojista=3P&gclsrc=aw.ds&&utm_campaign=cb_mkp_gg_shopping_core_eldo_sellers_toplojistas&gad_source=1&gad_campaignid=22819949204&gbraid=0AAAAADtAamgaq9LGFP16pXx7IyIYm_-CF&gclid=Cj0KCQjwkrzPBhCqARIsAJN460mS1tw7hkhmI78RZa4iZdJic6dtvkgnuenrJvGU5hFBwFxl1mM3UUcaAmptEALw_wcB"
+                target="_blank" rel="noopener noreferrer">Comprar na Casas Bahia</a>
+              <a href="https://www.carrefour.com.br/produto/lava-e-seca-samsung-wda-em-look-com-ecobubble-e-lavagem-a-seco-wdabx-kg-323567462?gad_campaignid=21012471034&gad_source=1&gbraid=0AAAAADjinokS7RDelT4HwD0osY9sX9CLi&gclid=Cj0KCQjwkrzPBhCqARIsAJN460nvbKY_hqG94XluSRg1vaNzJ8e3ncl4OSeZqWVszYtqURUL0n-2PXIaAhtGEALw_wcB&utm_campaign=3p_performancemax_Eletro_Apostas3p&utm_medium=sem&utm_source=google_pmax_3p"
+                target="_blank" rel="noopener noreferrer">Comprar no Carrefour</a>
+              <a href="https://www.mercadolivre.com.br/lava-e-seca-samsung-wd11a-com-ecobubble-wd11a4453bx-inox-look-117kg/p/MLB19120023?pdp_filters=item_id%3AMLB3294446785&matt_tool=38524122#origin=share&sid=share&wid=MLB3294446785&action=copy"
+                target="_blank" rel="noopener noreferrer">Comprar no Mercado Livre</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="smart-tv-tcl">
+          <div class="gift-product-image">
+            <img src="https://m.media-amazon.com/images/I/7199T+mkiXL._AC_SY450_.jpg"
+              alt="Smart TV TCL 75 Polegadas QLED Mini LED 4K C6K WiFi Bluetooth Google TV 4 HDMI 144Hz HDR10+ 75C6K">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Sala</span>
+            <h2>Smart TV TCL 75 Polegadas QLED Mini LED 4K C6K</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 6.284,62</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://www.amazon.com.br/TCL-Polegadas-Bluetooth-Google-75C6K/dp/B0F7K4MDVG" target="_blank"
+                rel="noopener noreferrer">Comprar na Amazon</a>
+              <a href="https://www.magazineluiza.com.br/smart-tv-75-ai-4k-uhd-qled-mini-led-android-tv-75c6k-tcl/p/dja257fhj6/et/tves/?seller_id=lojascolombooficial&srsltid=AfmBOorBN181IkfEAjM0aWDt9rqi073zc4hWUhSgeyJtk9PZBp9DMJQa-aU"
+                target="_blank" rel="noopener noreferrer">Comprar na Magalu</a>
+              <a href="https://www.mercadolivre.com.br/smart-tv-tcl-75-polegadas-qled-mini-led-4k-c6k-wifi-bluetooth-google-tv-4-hdmi-144hz-hdr10-75c6k/p/MLB50373005?pdp_filters=item_id%3AMLB4107749893&matt_tool=38524122#origin=share&sid=share&wid=MLB4107749893&action=copy"
+                target="_blank" rel="noopener noreferrer">Comprar no Mercado Livre</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="box-bau-premium-linho-bege-casal">
+          <div class="gift-product-image">
+            <img src="https://m.media-amazon.com/images/I/61Pbq7Jgp-L._AC_SX679_.jpg"
+              alt="Box Baú Premium Linho Bege Casal">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Quarto</span>
+            <h2>Box Baú Premium Linho Bege Casal</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 899,00</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://a.co/d/09Kdm6gw" target="_blank" rel="noopener noreferrer">Comprar na Amazon</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="jogo-panelas-inducao-manhattan-preto-5pecas-hauskraft-preto">
+          <div class="gift-product-image">
+            <img src="https://m.media-amazon.com/images/I/41bE-NVMxiL._AC_SX679_.jpg"
+              alt="Jogo de Panelas Indução Manhattan Preto 5 Peças Hauskraft - Preto">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Cozinha</span>
+            <h2>Jogo de Panelas Indução Manhattan Preto 5 Peças Hauskraft - Preto</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 699,90</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://a.co/d/00xRhplJ" target="_blank" rel="noopener noreferrer">Comprar na Amazon</a>
+              <a href="https://www.havan.com.br/jogo-de-panelas-inducao-manhattan-preto-5-pecas-hauskraft-preto/p"
+                target="_blank" rel="noopener noreferrer">Comprar na Havan</a>
+              <a href="https://www.mercadolivre.com.br/jogo-panelas-induco-antiaderente-cermica-manhattan-5-pecas/p/MLB58984205"
+                target="_blank" rel="noopener noreferrer">Comprar no Mercado Livre</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="jogo-de-jantar-ceramica">
+          <div class="gift-product-image">
+            <img
+              src="https://www.havan.com.br/media/catalog/product/cache/820af7facfa7aca6eb3c138e3457dc8d/a/p/aparelho-de-jantar-ceramica-naturalle-havan-casa-16-pecas_1077241.webp"
+              alt="Jogo De Jantar Cerâmica Preto">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Cozinha</span>
+            <h2>Jogo De Jantar Cerâmica Naturalle Havan Casa 16 Peças - Preto</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 349,90</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://www.havan.com.br/aparelho-de-jantar-ceramica-naturalle-havan-casa-16-pecas-preto/p"
+                target="_blank" rel="noopener noreferrer">Comprar na Havan</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="aparelho-de-jantar">
+          <div class="gift-product-image">
+            <img
+              src="https://www.havan.com.br/media/catalog/product/cache/820af7facfa7aca6eb3c138e3457dc8d/a/p/aparelho-de-jantar-e-cha-unni-brisa-oxford-20-pcs_1194991.webp"
+              alt="Aparelho de Jantar">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Cozinha</span>
+            <h2>Aparelho de Jantar e Chá Unni Brisa Oxford 20 Peças</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 279,90</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://www.havan.com.br/aparelho-de-jantar-e-cha-unni-brisa-oxford-20-pcs-cermica/p"
+                target="_blank" rel="noopener noreferrer">Comprar na Havan</a>
+              <a href="https://www.oxfordporcelanas.com.br/unni-brisa-20pcs/p?srsltid=AfmBOoqxpluzu0LVGAwen3Ygp0h7gpQQ8yIgwNetjAiHI3lLQFgVcRNp"
+                target="_blank" rel="noopener noreferrer">Comprar na Oxford</a>
+              <a href="https://www.mercadolivre.com.br/jogo-de-jantar-e-cha-20-pecas-unni-brisa-oxford-aw20-5903/p/MLB33795714?pdp_filters=item_id%3AMLB4481788370&matt_tool=38524122#origin=share&sid=share&wid=MLB4481788370&action=copy"
+                target="_blank" rel="noopener noreferrer">Comprar no Mercado Livre</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="faqueiro-tramontina-malibu">
+          <div class="gift-product-image">
+            <img src="https://assets.tramontina.com.br/upload/tramon/imagens/CUT/23799039PDM001G.jpg"
+              alt="Faqueiro Tramontina Malibu">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Cozinha</span>
+            <h2>Faqueiro Tramontina Malibu em Aço Inox 42 Peças</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 179,99</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://www.havan.com.br/faqueiro-aco-inox-malibu-42-pecas-tramontina-prata/p" target="_blank"
+                rel="noopener noreferrer">Comprar na Havan</a>
+              <a href="https://www.tramontina.com.br/faqueiro-tramontina-malibu-em-aco-inox-42-pecas/23799039.html"
+                target="_blank" rel="noopener noreferrer">Comprar na Tramontina</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="pipoqueira-tramontina-loreto-grafite">
+          <div class="gift-product-image">
+            <img src="https://m.media-amazon.com/images/I/51IVPYt5fyL._AC_SX569_.jpg"
+              alt="Pipoqueira Tramontina Loreto Grafite">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Cozinha</span>
+            <h2>Tramontina PIPOQUEIRA 20CM 3,5L LORETO GRAFITE</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 112,90</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://www.havan.com.br/pipoqueira-loreto-tramontina-3-5-litros-grafite/p" target="_blank"
+                rel="noopener noreferrer">Comprar na Havan</a>
+              <a href="https://www.tramontina.com.br/pipoqueira-tramontina-loreto-em-aluminio-com-revestimento-em-antiaderente-starflon-max-grafite-20-cm-3-5-l/20387020.html"
+                target="_blank" rel="noopener noreferrer">Comprar na Tramontina</a>
+              <a href="https://www.amazon.com.br/Tramontina-PIPOQUEIRA-20CM-LORETO-GRAFITE/dp/B09W3X75GK?th=1"
+                target="_blank" rel="noopener noreferrer">Comprar na Amazon</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="jogo-de-cama-casal-micro-percal-liso-havan-casa-4-pcs-rosa">
+          <div class="gift-product-image">
+            <img
+              src="https://www.havan.com.br/media/catalog/product/cache/820af7facfa7aca6eb3c138e3457dc8d/j/o/jogo-de-cama-casal-micro-percal-liso-havan-casa-4-pcs_1199894.webp"
+              alt="Jogo De Cama Casal Elegance Liso Havan Casa 4 Pçs - Rosa">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Quarto</span>
+            <h2>Jogo De Cama Casal Elegance Liso Havan Casa 4 Pçs - Rosa</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 119,99</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://www.havan.com.br/jogo-de-cama-casal-micro-percal-liso-havan-casa-4-pcs-rosa/p?utm_source=google&utm_medium=cpc&utm_campaign=aon-geral&utm_content=pmax-aon&gad_source=1&gad_campaignid=17682643843&gbraid=0AAAAADq2I2i17Qa0RQb0dqJAUNyrjYb9l&gclid=Cj0KCQjwkrzPBhCqARIsAJN460n8VWoB6k-CJ3UmYovBfGZvy2G55DE2sQj3WchNsrVQGGgkWMQMPGQaArVnEALw_wcB"
+                target="_blank" rel="noopener noreferrer">Comprar na Havan</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="colcha-casal-3-pecas-lisa-havan-casa-branco">
+          <div class="gift-product-image">
+            <img
+              src="https://www.havan.com.br/media/catalog/product/cache/820af7facfa7aca6eb3c138e3457dc8d/k/i/kit-colcha-casal-lisa-versalhes-havan-casa-3-pcs_1240154.webp"
+              alt="Colcha Casal Lisa Versalhes Havan Casa 3 Peças - Branco">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Quarto</span>
+            <h2>Colcha Casal Lisa Versalhes Havan Casa 3 Peças - Branco</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 129,99</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://www.havan.com.br/colcha-casal-3-pecas-lisa-havan-casa-branco/p?utm_source=google&utm_medium=cpc&utm_campaign=aon-geral&utm_content=pmax-aon&gad_source=1&gad_campaignid=17682643843&gbraid=0AAAAADq2I2i17Qa0RQb0dqJAUNyrjYb9l&gclid=Cj0KCQjwkrzPBhCqARIsAJN460lR_lpWfbeL3mkSs1mT1W-qH058KPz9A0xo79DX_s7cIdZH4Uju9JgaAgAmEALw_wcB"
+                target="_blank" rel="noopener noreferrer">Comprar na Havan</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="sopeira-em-porcelana-6und-de-blows-cor-branca">
+          <div class="gift-product-image">
+            <img src="https://imgmarketplace.lojasrenner.com.br/20000/5185/7010704171305/7510708645948/0.jpeg"
+              alt="Sopeira em porcelana - 6UND de Blows - Cor Branca">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Cozinha</span>
+            <h2>Sopeira em porcelana - 6UND de Blows - Cor Branca</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 489,90</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://www.camicado.com.br/p/sopeira-em-porcelana-6und-de-blows-cor-branca/-/A-7010704171305-br.lc?sku=7510708645948&utm_id=18288394715&gad_source=1&gad_campaignid=18282925119&gclid=Cj0KCQjwkrzPBhCqARIsAJN460kkT3wdOTb0Uzo622RlGbBh3twcco_xua3UOAE52cLOd6EqOxlwkSIaAmJuEALw_wcB"
+                target="_blank" rel="noopener noreferrer">Comprar na Camicado</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="wap-fritadeira-eletrica-air-fryer-oven-digital-12-litros">
+          <div class="gift-product-image">
+            <img src="https://m.media-amazon.com/images/I/71ed4lXApLL._AC_SX679_.jpg"
+              alt="WAP Fritadeira Elétrica Air Fryer OVEN DIGITAL 12 Litros">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Cozinha</span>
+            <h2>WAP Fritadeira Elétrica Air Fryer OVEN DIGITAL 12 Litros</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 459,90</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://a.co/d/003LCAcp" target="_blank" rel="noopener noreferrer">Comprar na Amazon</a>
+              <a href="https://www.mercadolivre.com.br/fritadeira-eletrica-wap-air-fryer-oven-digital-black-inox-12-litros-com-revestimento-antiaderente/p/MLB42225245?pdp_filters=item_id%3AMLB5561560620&matt_tool=38524122#origin=share&sid=share&wid=MLB5561560620&action=copy"
+                target="_blank" rel="noopener noreferrer">Comprar no Mercado Livre</a>
+              <a href="https://www.magazineluiza.com.br/fritadeira-eletrica-wap-airfry-oven-digital-black-inox-12l-110v/p/de857b521k/ep/efso/?&seller_id=123comprou&utm_source=google&utm_medium=cpc&utm_term=84400&utm_campaign=google_eco_per_ven_pla_arp_sor_3p_ep-b-0326&utm_content=&partner_id=84400&gclsrc=aw.ds&gad_source=1&gad_campaignid=23604909823&gbraid=0AAAAAD4zZmSKy4XIEO4NDPb1yzuMa9Z0T&gclid=Cj0KCQjwkrzPBhCqARIsAJN460noA2yOd4jhn12AElYFvpreH_CfXhrxeJT9mqnTDHydVwdQTuLHcjYaAsdLEALw_wcB"
+                target="_blank" rel="noopener noreferrer">Comprar na Magalu</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card"
+          data-gift-id="panificadora-multipane-12-programacoes-com-funco-timer-e-antiaderente-potncia-de-550-w-cor-preto-britnia">
+          <div class="gift-product-image">
+            <img src="https://m.media-amazon.com/images/I/51da87AGwDL._AC_SX679_.jpg"
+              alt="Panificadora, Multipane, 550W, Preto, 110v, Britânia">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Cozinha</span>
+            <h2>Panificadora, Multipane, 550W, Preto, 110v, Britânia</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 495,88</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://a.co/d/09kIaU10" target="_blank" rel="noopener noreferrer">Comprar na Amazon</a>
+              <a href="https://www.mercadolivre.com.br/panificadora-multipane-12-programacoes-com-funco-timer-e-antiaderente-potncia-de-550-w-cor-preto-britnia/p/MLB14489716?pdp_filters=item_id%3AMLB4498271904&matt_tool=38524122#origin=share&sid=share&wid=MLB4498271904&action=copy"
+                target="_blank" rel="noopener noreferrer">Comprar no Mercado Livre</a>
+              <a href="https://www.casasbahia.com.br/panificadora-britania-multi-pane-2p-com-copo-e-colher-dosadora/p/438176?utm_medium=Cpc&utm_source=GP_PLA&IdSku=438176&idLojista=10037&tipoLojista=1P&gclsrc=aw.ds&&utm_campaign=cb_b2c_gg_shopping_core_elpo_geral&gad_source=1&gad_campaignid=22439146548&gbraid=0AAAAADtAamgF19pM_eeIybxXNU4qA23UD&gclid=CjwKCAjw-8vPBhBbEiwAoA39Wh9BrmvDjAqzyJUfAwQz_DBEy2AjW0JISoBR39avNFhm0DIJdGh2ZRoCUTgQAvD_BwE"
+                target="_blank" rel="noopener noreferrer">Comprar na Casas Bahia</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="Lorenzetti-Acqua-Duo">
+          <div class="gift-product-image">
+            <img src="https://m.media-amazon.com/images/I/51gZbJsXvYL._AC_SX679_.jpg"
+              alt="LORENZETTI Chuveiro Acqua Duo 220V 7800W">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Banheiro</span>
+            <h2>LORENZETTI Chuveiro Acqua Duo 220V 7800W, 7510101, Branco/Cromado, Pequeno</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 568,11</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://www.mercadolivre.com.br/chuveiro-lorenzetti-ducha-acqua-duo-ultra-7800w-branco-e-cromado/p/MLB15480154?pdp_filters=item_id%3AMLB6530215790&matt_tool=38524122#origin=share&sid=share&wid=MLB6530215790&action=copy"
+                target="_blank" rel="noopener noreferrer">Comprar no Mercado Livre</a>
+              <a href="https://a.co/d/0agj5s7V" target="_blank" rel="noopener noreferrer">Comprar na Amazon</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="Britania-Panela-Elétrica">
+          <div class="gift-product-image">
+            <img
+              src="https://philco.vtexassets.com/arquivos/ids/272491-800-800?v=638993448111230000&width=800&height=800&aspect=true"
+              alt="Panela Elétrica de Arroz Britânia PA5 Prime 5 Xícaras - Preta - 110V">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Cozinha</span>
+            <h2>Panela Elétrica de Arroz Britânia PA5 Prime 5 Xícaras - Preta - 110V</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 141,55</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://www.britania.com.br/panela-de-arroz-britania-pa5-prime-preta/p?srsltid=AfmBOop5GJDFlPxaX9TXZfma4j6kkABENK_PLn6NO4LahaPdnAeUIGZa"
+                target="_blank" rel="noopener noreferrer">Comprar na Britânia</a>
+              <a href="https://www.casasbahia.com.br/panela-eletrica-de-arroz-britania-pa5-prime-5-xicaras-preta/p/2372401?utm_medium=cpc&utm_source=GP_PLA&IdSku=2372401&idLojista=10037&tipoLojista=1P&gclsrc=aw.ds&&utm_campaign=cb_b2c_gg_shopping_core_elpo_geral&gad_source=1&gad_campaignid=22439146548&gbraid=0AAAAADtAamiTUOtclVUkQaVxZFTytKlSw&gclid=EAIaIQobChMI1qfMtoGXlAMVG1hIAB1rvxZqEAQYAiABEgLJNPD_BwE"
+                target="_blank" rel="noopener noreferrer">Comprar na Casas Bahia</a>
+              <a href="https://www.lojasmm.com/panela-eletrica-de-arroz-britania-pa5x-1-litro-faz-5-xicaras/p?idsku=704&gad_source=1&gad_campaignid=22893730773&gbraid=0AAAAAD6Bh3SvRJlyzQFkMFB2RdAnWT5fz&gclid=EAIaIQobChMI1qfMtoGXlAMVG1hIAB1rvxZqEAQYAyABEgL4R_D_BwE"
+                target="_blank" rel="noopener noreferrer">Comprar na LojasMM</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="Britania-Aquecedor-Elétrico">
+          <div class="gift-product-image">
+            <img src="https://m.media-amazon.com/images/I/61LKp8oMFBL._AC_SX569_.jpg"
+              alt="Aquecedor Elétrico 2 Em 1 Britânia 1500w Ab1100n 110v 110v">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Quarto</span>
+            <h2>Aquecedor Elétrico 2 Em 1 Britânia 1500w Ab1100n 110v 110v</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 113,90</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://a.co/d/09iZ1lZD" target="_blank" rel="noopener noreferrer">Comprar na Amazon</a>
+              <a href="https://www.havan.com.br/aquecedor-britania-2-em-1-ab1100n/p?utm_source=google&utm_medium=cpc&utm_campaign=aon-shopping-purchase-110-sf-tlh&utm_content=tlh-purchase-auto-generico-auto-campanha-aon-shopping&gad_source=1&gad_campaignid=23076176818&gbraid=0AAAAADq2I2g5Vbkp0Y69vSDd7r4WNf9xJ&gclid=CjwKCAjw-8vPBhBbEiwAoA39WtVwPKyr3Ln6hN1aBI3xtRRatykSQHZdUCCaL6frJIZAkxk_lIA1MRoC4Q8QAvD_BwE"
+                target="_blank" rel="noopener noreferrer">Comprar na Havan</a>
+              <a href="https://www.lojasmm.com/aquecedor-britania-2-em-1-com-2-opcoes-de-temperatura-ab1100n/p?idsku=988&gad_source=1&gad_campaignid=22893730773&gbraid=0AAAAAD6Bh3SvRJlyzQFkMFB2RdAnWT5fz&gclid=CjwKCAjw-8vPBhBbEiwAoA39Wi2lEga5GKFnt8lfm8InWcsD_TbHVTG7wo9qZhEk_eI_clAhyzqCyBoCnEkQAvD_BwE"
+                target="_blank" rel="noopener noreferrer">Comprar na LojasMM</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="Cobertor-King-Velvet-Prime-Toque-Acetinado-Dani-Lorenzi-Cinza">
+          <div class="gift-product-image">
+            <img
+              src="https://daju.fbitsstatic.net/img/p/cobertor-king-velvet-prime-toque-acetinado-dani-lorenzi-101597/305511-3.jpg?w=1000&h=1000&v=202512151644"
+              alt="Cobertor King Velvet Prime Toque Acetinado Dani Lorenzi Cinza">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Quarto</span>
+            <h2>Cobertor King Velvet Prime Toque Acetinado Dani Lorenzi Cinza</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 699,90</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://www.daju.com.br/produto/cobertor-king-velvet-prime-toque-acetinado-dani-lorenzi-101597"
+                target="_blank" rel="noopener noreferrer">Comprar na Daju</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card"
+          data-gift-id="JBL-Soundbar-Bluetooth-Cinema-SB180-2-1-Canais-Subwoofer-de-6-5-Sem-Fio">
+          <div class="gift-product-image">
+            <img src="https://m.media-amazon.com/images/I/51rDbX0su5L._AC_SX679_.jpg"
+              alt="JBL, Soundbar, Bluetooth, Cinema SB180, 2.1 Canais, Subwoofer de 6,5" Sem Fio">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Sala</span>
+            <h2>JBL, Soundbar, Bluetooth, Cinema SB180, 2.1 Canais, Subwoofer de 6,5" Sem Fio</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 845,22</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://a.co/d/0hQcSmk4" target="_blank" rel="noopener noreferrer">Comprar na Amazon</a>
+              <a href="https://www.mercadolivre.com.br/soundbar-jbl-cinema-sb180-preto-com-subwoofer-sem-fio/p/MLB44325837?pdp_filters=item_id%3AMLB6531019448&matt_tool=38524122#origin=share&sid=share&wid=MLB6531019448&action=copy"
+                target="_blank" rel="noopener noreferrer">Comprar no Mercado Livre</a>
+              <a href="https://www.magazineluiza.com.br/jbl-cinema-sb180-caixa-de-som-soundbar-preto/p/jff6kfh1a0/ea/jbla/?&seller_id=lojaiplace&utm_source=google&utm_medium=cpc&utm_term=84434&utm_campaign=google_eco_per_ven_pla_tc_sor_3p_ea-ga-tb-wea-b-0326&utm_content=&partner_id=84434&gclsrc=aw.ds&gad_source=1&gad_campaignid=23594805027&gbraid=0AAAAAD4zZmQwQ6C7hzUVOzqBSCusDYFVG&gclid=CjwKCAjwwdbPBhBgEiwAxBRA4fawjakqVXCNmQudsH6RxZh9g2KhxMzUxMFVW27L5szTWa2g3SSVjxoCJTQQAvD_BwE"
+                target="_blank" rel="noopener noreferrer">Comprar na Magalu</a>
+
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="SUGGAR-DEPURADOR-DE-AR-SLIM-60CM-3-VEL-PRETO-110V-DPS161PT">
+          <div class="gift-product-image">
+            <img src="https://m.media-amazon.com/images/I/41q3C2LevmL._AC_SX679_.jpg"
+              alt="SUGGAR, Depurador de Ar, Slim, 60cm, 3 Velocidades, Preto, 110V, DPS161PT">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Cozinha</span>
+            <h2>SUGGAR DEPURADOR DE AR SLIM 60CM 3 VEL. PRETO 110V DPS161PT</h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 322,14</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://a.co/d/0dgDhXuP" target="_blank" rel="noopener noreferrer">Comprar na Amazon</a>
+              <a href="https://www.suggar.com.br/produto/depurador-e-exaustor-de-ar-slim-60-cm-preto-suggar-64228"
+                target="_blank" rel="noopener noreferrer">Comprar na SUGGAR</a>
+              <a href="https://www.magazineluiza.com.br/depurador-e-exaustor-de-ar-suggar-slim-60cm-3-velocidades-titanium/p/cg7dh6a027/ed/depu/?&seller_id=techshop&utm_source=google&utm_medium=cpc&utm_term=84408&utm_campaign=google_eco_per_ven_pla_ele_sor_3p_ed1-ed2-a-0326&utm_content=&partner_id=84408&gclsrc=aw.ds&gad_source=1&gad_campaignid=23595290313&gbraid=0AAAAAD4zZmSQzrdBPTw83weB0DxbrshdU&gclid=CjwKCAjwwdbPBhBgEiwAxBRA4TC8v_ckHTbtyOWSwi4NhEIVk_oJfNo6alEKsnUqiEcMdi3uxDcW-BoCz5IQAvD_BwE"
+                target="_blank" rel="noopener noreferrer">Comprar na Magalu</a>
+
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="Edredom-Queen-Hotel-Classic-Maquinetado-200-Fios-Daju-Rosa">
+          <div class="gift-product-image">
+            <img
+              src="https://daju.fbitsstatic.net/img/p/edredom-queen-hotel-classic-maquinetado-200-fios-daju-97428/299892-4.jpg?w=1000&h=1000&v=202512161637"
+              alt="Edredom Queen Hotel Classic Maquinetado 200 Fios Daju Rosa">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Quarto</span>
+            <h2>Edredom Queen Hotel Classic Maquinetado 200 Fios Daju Rosa
+            </h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 259,94</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://www.daju.com.br/produto/edredom-queen-hotel-classic-maquinetado-200-fios-daju-97428"
+                target="_blank" rel="noopener noreferrer">Comprar na Daju</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="Cobertor-Queen-Chamonix-Efeito-Bubble-Corttex-Sortido">
+          <div class="gift-product-image">
+            <img
+              src="https://daju.fbitsstatic.net/img/p/cobertor-queen-chamonix-efeito-bubble-corttex-101963/306117-2.jpg?w=1000&h=1000&v=202510091729"
+              alt="Cobertor Queen Chamonix Efeito Bubble Corttex Sortido">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Quarto</span>
+            <h2>Cobertor Queen Chamonix Efeito Bubble Corttex Sortido
+            </h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 129,90</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://www.daju.com.br/produto/cobertor-queen-chamonix-efeito-bubble-corttex-101963"
+                target="_blank" rel="noopener noreferrer">Comprar na Daju</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+        <article class="gift-product-card" data-gift-id="Colcha-Queen-Satinee-Square-300-Fios-Fend-Kacyumara">
+          <div class="gift-product-image">
+            <img
+              src="https://daju.fbitsstatic.net/img/p/colcha-queen-satinee-square-300-fios-kacyumara-83768/283215.jpg?w=1000&h=1000&v=202604171643"
+              alt="Colcha Queen Satinee Square 300 Fios Fend | Kacyumara">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Quarto</span>
+            <h2>Colcha Queen Satinee Square 300 Fios Fend | Kacyumara
+            </h2>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Média de valor encontrado:</span>
+                <strong>R$ 799,90</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn">
+                <span>Presentear via Pix</span>
+                <strong>Valor médio</strong>
+              </button>
+            </div>
+
+            <div class="gift-product-links">
+              <a href="https://www.daju.com.br/produto/colcha-queen-satinee-square-300-fios-kacyumara-83768"
+                target="_blank" rel="noopener noreferrer">Comprar na Daju</a>
+            </div>
+
+            <div class="gift-reserve-box">
+              <input type="text" class="reserve-name-input" placeholder="Informe seu nome e sobrenome">
+              <button type="button" class="reserve-gift-btn">Reservar presente</button>
+            </div>
+
+            <div class="gift-success-message">
+              Obrigado! Presente reservado com sucesso.
+            </div>
+
+            <div class="gift-bought-message">
+              Este presente já foi reservado ❤️
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <a href="#top" class="floating-button">
+    Lista de presentes
+  </a>
+
+  <script src="./scripts/home.js"></script>
+  <script type="module" src="./scripts/presentes.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const modal = document.getElementById("giftInstructionsModal");
+      const closeBtn = document.getElementById("giftModalClose");
+      const okBtn = document.getElementById("giftModalOk");
+
+      function closeModal() {
+        if (!modal) return;
+        modal.classList.add("is-hidden");
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener("click", closeModal);
+      }
+
+      if (okBtn) {
+        okBtn.addEventListener("click", closeModal);
+      }
+
+      if (modal) {
+        modal.addEventListener("click", function (event) {
+          if (event.target === modal) {
+            closeModal();
+          }
+        });
+      }
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeModal();
+          closePixModal();
+        }
+      });
+
+      const copyBtn = document.getElementById("copyAddressBtn");
+      const copyMsg = document.getElementById("copyAddressMsg");
+
+      if (copyBtn && copyMsg) {
+        copyBtn.addEventListener("click", async function () {
+          const text = `Rua Leonardo Pianowski, 625 - Casa 2
+Pinheirinho, Curitiba - PR
+CEP: 81150-330`;
+
+          try {
+            if (navigator.clipboard && window.isSecureContext) {
+              await navigator.clipboard.writeText(text);
+            } else {
+              const temp = document.createElement("textarea");
+              temp.value = text;
+              temp.setAttribute("readonly", "");
+              temp.style.position = "absolute";
+              temp.style.left = "-9999px";
+              document.body.appendChild(temp);
+              temp.select();
+              document.execCommand("copy");
+              document.body.removeChild(temp);
+            }
+
+            copyMsg.classList.add("show");
+
+            setTimeout(function () {
+              copyMsg.classList.remove("show");
+            }, 2500);
+          } catch (error) {
+            console.error("Erro ao copiar endereço:", error);
+          }
+        });
+      }
+
+      const pixConfig = {
+        key: "13616840970",
+        name: "EDUARDO BRYAN BRAGA",
+        city: "CURITIBA"
+      };
+
+      const pixModal = document.getElementById("pixGiftModal");
+      const pixClose = document.getElementById("pixGiftClose");
+      const pixTitle = document.getElementById("pixGiftTitle");
+      const pixAmount = document.getElementById("pixGiftAmount");
+      const pixQrCode = document.getElementById("pixGiftQrCode");
+      const copyPixCodeBtn = document.getElementById("copyPixCodeBtn");
+      const copyPixFeedback = document.getElementById("copyPixFeedback");
+
+      let currentPixPayload = "";
+
+      function sanitizeText(value, maxLength) {
+        return String(value || "")
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .replace(/[^A-Z0-9 ]/gi, "")
+          .toUpperCase()
+          .substring(0, maxLength);
+      }
+
+      function formatPixField(id, value) {
+        const stringValue = String(value);
+        const length = String(stringValue.length).padStart(2, "0");
+        return `${id}${length}${stringValue}`;
+      }
+
+      function crc16(payload) {
+        let crc = 0xffff;
+
+        for (let i = 0; i < payload.length; i++) {
+          crc ^= payload.charCodeAt(i) << 8;
+
+          for (let j = 0; j < 8; j++) {
+            if ((crc & 0x8000) !== 0) {
+              crc = (crc << 1) ^ 0x1021;
+            } else {
+              crc <<= 1;
+            }
+
+            crc &= 0xffff;
+          }
+        }
+
+        return crc.toString(16).toUpperCase().padStart(4, "0");
+      }
+
+      function parseBRLToNumber(value) {
+        return Number(
+          String(value || "")
+            .replace("R$", "")
+            .replace(/\./g, "")
+            .replace(",", ".")
+            .replace(/[^\d.]/g, "")
+        );
+      }
+
+      function createPixPayload({ key, name, city, amount, txid }) {
+        const gui = formatPixField("00", "BR.GOV.BCB.PIX");
+        const pixKey = formatPixField("01", key);
+        const merchantAccountInfo = formatPixField("26", gui + pixKey);
+
+        const payloadWithoutCRC =
+          formatPixField("00", "01") +
+          formatPixField("01", "12") +
+          merchantAccountInfo +
+          formatPixField("52", "0000") +
+          formatPixField("53", "986") +
+          formatPixField("54", amount.toFixed(2)) +
+          formatPixField("58", "BR") +
+          formatPixField("59", sanitizeText(name, 25)) +
+          formatPixField("60", sanitizeText(city, 15)) +
+          formatPixField("62", formatPixField("05", sanitizeText(txid, 25))) +
+          "6304";
+
+        return payloadWithoutCRC + crc16(payloadWithoutCRC);
+      }
+
+      function openPixModal(card) {
+        if (!pixModal || !pixTitle || !pixAmount || !pixQrCode) return;
+
+        const giftTitle = card.querySelector(".gift-product-content h2")?.textContent.trim() || "Presente selecionado";
+        const priceText = card.querySelector(".gift-product-price strong")?.textContent.trim() || "R$ 0,00";
+        const giftId = card.dataset.giftId || "PRESENTE";
+        const amount = parseBRLToNumber(priceText);
+
+        currentPixPayload = createPixPayload({
+          key: pixConfig.key,
+          name: pixConfig.name,
+          city: pixConfig.city,
+          amount,
+          txid: giftId
+        });
+
+        pixTitle.textContent = giftTitle;
+        pixAmount.textContent = priceText;
+        pixQrCode.innerHTML = "";
+
+        new QRCode(pixQrCode, {
+          text: currentPixPayload,
+          width: 220,
+          height: 220,
+          correctLevel: QRCode.CorrectLevel.M
+        });
+
+        pixModal.classList.remove("is-hidden");
+      }
+
+      function closePixModal() {
+        if (!pixModal) return;
+        pixModal.classList.add("is-hidden");
+      }
+
+      document.querySelectorAll(".gift-product-card").forEach(function (card) {
+        const pixButton = card.querySelector(".pix-reserve-btn");
+
+        if (!pixButton) return;
+
+        pixButton.addEventListener("click", function () {
+          openPixModal(card);
+        });
+      });
+
+      if (pixClose) {
+        pixClose.addEventListener("click", closePixModal);
+      }
+
+      if (pixModal) {
+        pixModal.addEventListener("click", function (event) {
+          if (event.target === pixModal) {
+            closePixModal();
+          }
+        });
+      }
+
+      if (copyPixCodeBtn && copyPixFeedback) {
+        copyPixCodeBtn.addEventListener("click", async function () {
+          if (!currentPixPayload) return;
+
+          try {
+            if (navigator.clipboard && window.isSecureContext) {
+              await navigator.clipboard.writeText(currentPixPayload);
+            } else {
+              const temp = document.createElement("textarea");
+              temp.value = currentPixPayload;
+              temp.setAttribute("readonly", "");
+              temp.style.position = "absolute";
+              temp.style.left = "-9999px";
+              document.body.appendChild(temp);
+              temp.select();
+              document.execCommand("copy");
+              document.body.removeChild(temp);
+            }
+
+            copyPixFeedback.classList.add("show");
+
+            setTimeout(function () {
+              copyPixFeedback.classList.remove("show");
+            }, 2500);
+          } catch (error) {
+            console.error("Erro ao copiar código Pix:", error);
+          }
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
