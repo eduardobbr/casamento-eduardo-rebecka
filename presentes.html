@@ -114,6 +114,42 @@
     <section class="gift-list-section">
       <div class="gift-list-grid">
 
+        <article class="gift-product-card gift-special-card" data-gift-id="fotografo-casamento" data-pix-free="true">
+          <div class="gift-product-image gift-special-image">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80"
+              alt="Fotógrafo do casamento">
+          </div>
+
+          <div class="gift-product-content">
+            <span class="gift-product-tag">Presente especial</span>
+            <h2>Ajuda para o fotógrafo do casamento</h2>
+
+            <p class="gift-special-text">
+              Esse é um item muito especial para nós. Queremos registrar esse dia com carinho,
+              mas o investimento do fotógrafo ficou em R$ 5.400,00 e, neste momento,
+              qualquer ajuda será muito bem-vinda. Por isso, estamos aceitando contribuições
+              via Pix para tornar esse registro possível. Toda contribuição será recebida
+              com muita gratidão.
+            </p>
+
+            <div class="gift-payment-row">
+              <div class="gift-product-price">
+                <span>Investimento do fotógrafo:</span>
+                <strong>R$ 5.400,00</strong>
+              </div>
+
+              <button type="button" class="pix-reserve-btn" data-pix-free="true">
+                <span>Contribuir via Pix</span>
+                <strong>Qualquer valor ajuda</strong>
+              </button>
+            </div>
+
+            <div class="gift-bought-message">
+              Obrigado por ajudar a registrar esse momento tão importante ❤️
+            </div>
+          </div>
+        </article>
+
         <article class="gift-product-card" data-gift-id="fondue-viena">
           <div class="gift-product-image">
             <img
@@ -1517,8 +1553,8 @@
   </main>
 
   <script src="./scripts/home.js"></script>
-  <script type="module" src="./scripts/presentes.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script type="module" src="./scripts/presentes.js"></script>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -1550,7 +1586,6 @@
       document.addEventListener("keydown", function (event) {
         if (event.key === "Escape") {
           closeModal();
-          closePixModal();
         }
       });
 
@@ -1589,174 +1624,6 @@ CEP: 81150-330`;
         });
       }
 
-      const pixConfig = {
-        key: "13616840970",
-        name: "EDUARDO BRYAN BRAGA",
-        city: "CURITIBA"
-      };
-
-      const pixModal = document.getElementById("pixGiftModal");
-      const pixClose = document.getElementById("pixGiftClose");
-      const pixTitle = document.getElementById("pixGiftTitle");
-      const pixAmount = document.getElementById("pixGiftAmount");
-      const pixQrCode = document.getElementById("pixGiftQrCode");
-      const copyPixCodeBtn = document.getElementById("copyPixCodeBtn");
-      const copyPixFeedback = document.getElementById("copyPixFeedback");
-
-      let currentPixPayload = "";
-
-      function sanitizeText(value, maxLength) {
-        return String(value || "")
-          .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "")
-          .replace(/[^A-Z0-9 ]/gi, "")
-          .toUpperCase()
-          .substring(0, maxLength);
-      }
-
-      function formatPixField(id, value) {
-        const stringValue = String(value);
-        const length = String(stringValue.length).padStart(2, "0");
-        return `${id}${length}${stringValue}`;
-      }
-
-      function crc16(payload) {
-        let crc = 0xffff;
-
-        for (let i = 0; i < payload.length; i++) {
-          crc ^= payload.charCodeAt(i) << 8;
-
-          for (let j = 0; j < 8; j++) {
-            if ((crc & 0x8000) !== 0) {
-              crc = (crc << 1) ^ 0x1021;
-            } else {
-              crc <<= 1;
-            }
-
-            crc &= 0xffff;
-          }
-        }
-
-        return crc.toString(16).toUpperCase().padStart(4, "0");
-      }
-
-      function parseBRLToNumber(value) {
-        return Number(
-          String(value || "")
-            .replace("R$", "")
-            .replace(/\./g, "")
-            .replace(",", ".")
-            .replace(/[^\d.]/g, "")
-        );
-      }
-
-      function createPixPayload({ key, name, city, amount, txid }) {
-        const gui = formatPixField("00", "BR.GOV.BCB.PIX");
-        const pixKey = formatPixField("01", key);
-        const merchantAccountInfo = formatPixField("26", gui + pixKey);
-
-        const payloadWithoutCRC =
-          formatPixField("00", "01") +
-          formatPixField("01", "12") +
-          merchantAccountInfo +
-          formatPixField("52", "0000") +
-          formatPixField("53", "986") +
-          formatPixField("54", amount.toFixed(2)) +
-          formatPixField("58", "BR") +
-          formatPixField("59", sanitizeText(name, 25)) +
-          formatPixField("60", sanitizeText(city, 15)) +
-          formatPixField("62", formatPixField("05", sanitizeText(txid, 25))) +
-          "6304";
-
-        return payloadWithoutCRC + crc16(payloadWithoutCRC);
-      }
-
-      function openPixModal(card) {
-        if (!pixModal || !pixTitle || !pixAmount || !pixQrCode) return;
-
-        const giftTitle = card.querySelector(".gift-product-content h2")?.textContent.trim() || "Presente selecionado";
-        const priceText = card.querySelector(".gift-product-price strong")?.textContent.trim() || "R$ 0,00";
-        const giftId = card.dataset.giftId || "PRESENTE";
-        const amount = parseBRLToNumber(priceText);
-
-        currentPixPayload = createPixPayload({
-          key: pixConfig.key,
-          name: pixConfig.name,
-          city: pixConfig.city,
-          amount,
-          txid: giftId
-        });
-
-        pixTitle.textContent = giftTitle;
-        pixAmount.textContent = priceText;
-        pixQrCode.innerHTML = "";
-
-        new QRCode(pixQrCode, {
-          text: currentPixPayload,
-          width: 220,
-          height: 220,
-          correctLevel: QRCode.CorrectLevel.M
-        });
-
-        pixModal.classList.remove("is-hidden");
-      }
-
-      function closePixModal() {
-        if (!pixModal) return;
-        pixModal.classList.add("is-hidden");
-      }
-
-      document.querySelectorAll(".gift-product-card").forEach(function (card) {
-        const pixButton = card.querySelector(".pix-reserve-btn");
-
-        if (!pixButton) return;
-
-        pixButton.addEventListener("click", function () {
-          openPixModal(card);
-        });
-      });
-
-      if (pixClose) {
-        pixClose.addEventListener("click", closePixModal);
-      }
-
-      if (pixModal) {
-        pixModal.addEventListener("click", function (event) {
-          if (event.target === pixModal) {
-            closePixModal();
-          }
-        });
-      }
-
-      if (copyPixCodeBtn && copyPixFeedback) {
-        copyPixCodeBtn.addEventListener("click", async function () {
-          if (!currentPixPayload) return;
-
-          try {
-            if (navigator.clipboard && window.isSecureContext) {
-              await navigator.clipboard.writeText(currentPixPayload);
-            } else {
-              const temp = document.createElement("textarea");
-              temp.value = currentPixPayload;
-              temp.setAttribute("readonly", "");
-              temp.style.position = "absolute";
-              temp.style.left = "-9999px";
-              document.body.appendChild(temp);
-              temp.select();
-              document.execCommand("copy");
-              document.body.removeChild(temp);
-            }
-
-            copyPixFeedback.classList.add("show");
-
-            setTimeout(function () {
-              copyPixFeedback.classList.remove("show");
-            }, 2500);
-          } catch (error) {
-            console.error("Erro ao copiar código Pix:", error);
-          }
-        });
-      }
     });
   </script>
 </body>
