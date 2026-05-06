@@ -25,6 +25,39 @@
   <div class="ambient ambient-2"></div>
   <div class="ambient ambient-3"></div>
 
+  <div class="presence-modal is-hidden" id="presenceModal">
+    <div class="presence-box">
+      <button type="button" class="presence-close" id="closePresenceModal" aria-label="Fechar confirmação">
+        ×
+      </button>
+
+      <h2>Confirme sua presença:</h2>
+
+      <p>
+        Para nos ajudar na organização do nosso grande dia, confirme sua presença informando seu nome completo.
+      </p>
+
+      <form class="presence-form" id="presenceForm">
+        <label for="presenceName">Nome completo</label>
+
+        <input type="text" id="presenceName" name="presenceName" placeholder="Digite seu nome completo"
+          autocomplete="name" required>
+
+        <button type="submit" class="presence-submit-btn" id="presenceSubmitBtn">
+          Confirmar presença
+        </button>
+      </form>
+
+      <p class="presence-feedback success" id="presenceSuccess">
+        Presença confirmada com sucesso. Obrigado!
+      </p>
+
+      <p class="presence-feedback error" id="presenceError">
+        Não foi possível confirmar agora. Tente novamente.
+      </p>
+    </div>
+  </div>
+
   <aside class="side-nav" id="sideNav">
     <div class="brand-monogram">
       <span>E</span>
@@ -91,6 +124,11 @@
               <span>Ver Lista de Presentes</span>
               <i class="ion-ios-heart"></i>
             </a>
+
+            <button type="button" class="lux-button hero-presence-button" id="openPresenceModal">
+              <span>Confirmar Presença</span>
+              <i class="ion-ios-checkmark-outline"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -500,6 +538,121 @@
         copiarPixBtn.addEventListener("click", copyPixPayload, true);
       }
     });
+  </script>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+    import {
+      getFirestore,
+      collection,
+      addDoc,
+      serverTimestamp
+    } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBIIO-LYj41Ir7VOtG7240vgnuh6_JN1pw",
+      authDomain: "casamento-df6d5.firebaseapp.com",
+      projectId: "casamento-df6d5",
+      storageBucket: "casamento-df6d5.firebasestorage.app",
+      messagingSenderId: "89839975736",
+      appId: "1:89839975736:web:7434c833fe1d9f5af455cd"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const presenceModal = document.getElementById("presenceModal");
+    const openPresenceModal = document.getElementById("openPresenceModal");
+    const closePresenceModal = document.getElementById("closePresenceModal");
+    const presenceForm = document.getElementById("presenceForm");
+    const presenceName = document.getElementById("presenceName");
+    const presenceSubmitBtn = document.getElementById("presenceSubmitBtn");
+    const presenceSuccess = document.getElementById("presenceSuccess");
+    const presenceError = document.getElementById("presenceError");
+
+    function openModal() {
+      if (!presenceModal) return;
+
+      presenceModal.classList.remove("is-hidden");
+      presenceSuccess.classList.remove("show");
+      presenceError.classList.remove("show");
+
+      setTimeout(() => {
+        if (presenceName) presenceName.focus();
+      }, 120);
+    }
+
+    function closeModal() {
+      if (!presenceModal) return;
+      presenceModal.classList.add("is-hidden");
+    }
+
+    if (openPresenceModal) {
+      openPresenceModal.addEventListener("click", openModal);
+    }
+
+    if (closePresenceModal) {
+      closePresenceModal.addEventListener("click", closeModal);
+    }
+
+    if (presenceModal) {
+      presenceModal.addEventListener("click", function (event) {
+        if (event.target === presenceModal) {
+          closeModal();
+        }
+      });
+    }
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeModal();
+      }
+    });
+
+    if (presenceForm) {
+      presenceForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const name = presenceName.value.trim().replace(/\s+/g, " ");
+
+        presenceSuccess.classList.remove("show");
+        presenceError.classList.remove("show");
+
+        if (name.length < 5) {
+          presenceError.textContent = "Por favor, informe seu nome completo.";
+          presenceError.classList.add("show");
+          presenceName.focus();
+          return;
+        }
+
+        presenceSubmitBtn.disabled = true;
+        presenceSubmitBtn.textContent = "Confirmando...";
+
+        try {
+          await addDoc(collection(db, "convidados"), {
+            nome: name,
+            status: "confirmado",
+            origem: "site",
+            confirmadoEm: serverTimestamp()
+          });
+
+          presenceForm.reset();
+          presenceSuccess.textContent = "Presença confirmada com sucesso. Obrigado!";
+          presenceSuccess.classList.add("show");
+
+          setTimeout(() => {
+            closeModal();
+          }, 1800);
+        } catch (error) {
+          console.error("Erro ao confirmar presença:", error);
+          presenceError.textContent = "Não foi possível confirmar agora. Tente novamente.";
+          presenceError.classList.add("show");
+        } finally {
+          presenceSubmitBtn.disabled = false;
+          presenceSubmitBtn.textContent = "Confirmar presença";
+        }
+      });
+    }
   </script>
 </body>
 

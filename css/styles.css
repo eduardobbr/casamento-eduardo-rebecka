@@ -1421,3 +1421,208 @@ p,
     gap: 12px;
   }
 }
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 34px;
+  flex-wrap: wrap;
+}
+
+.hero-gift-button {
+  background: linear-gradient(135deg, rgba(232, 167, 178, .24), rgba(255, 250, 245, .92));
+  border-color: rgba(232, 167, 178, .42);
+}
+
+.hero-gift-button i {
+  color: var(--rose);
+}
+
+.hero-presence-button {
+  border: 1px solid rgba(109, 146, 118, .34);
+  background: linear-gradient(135deg, rgba(109, 146, 118, .18), rgba(255, 250, 245, .94));
+  color: var(--brown);
+}
+
+.hero-presence-button i {
+  color: var(--success);
+}
+
+.presence-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(67, 41, 29, .46);
+  backdrop-filter: blur(10px);
+}
+
+.presence-modal.is-hidden {
+  display: none;
+}
+
+.presence-box {
+  position: relative;
+  width: min(100%, 620px);
+  padding: 42px 38px;
+  border-radius: 32px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(255, 250, 245, .98), rgba(247, 234, 223, .96));
+  border: 1px solid rgba(168, 115, 63, .22);
+  box-shadow: 0 28px 80px rgba(67, 41, 29, .24);
+}
+
+.presence-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .72);
+  color: var(--brown);
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.presence-kicker {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--gold-soft);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.presence-box h2 {
+  margin: 0 0 18px;
+  color: var(--brown);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3.2rem;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.presence-box p {
+  max-width: 500px;
+  margin: 0 auto 26px;
+  padding: 0;
+  color: var(--text-soft);
+  font-size: 1.25rem;
+  line-height: 1.65;
+}
+
+.presence-form {
+  display: grid;
+  gap: 14px;
+}
+
+.presence-form label {
+  color: var(--text-muted);
+  font-size: .92rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.presence-form input {
+  width: 100%;
+  min-height: 58px;
+  padding: 0 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(168, 115, 63, .24);
+  background: rgba(255, 255, 255, .78);
+  color: var(--brown);
+  font-size: 1.1rem;
+  outline: none;
+}
+
+.presence-form input::placeholder {
+  color: rgba(59, 38, 27, .48);
+}
+
+.presence-form input:focus {
+  border-color: rgba(168, 115, 63, .55);
+  box-shadow: 0 0 0 4px rgba(168, 115, 63, .1);
+}
+
+.presence-submit-btn {
+  min-height: 58px;
+  margin-top: 4px;
+  border: 1px solid rgba(109, 146, 118, .34);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(109, 146, 118, .24), rgba(255, 250, 245, .92));
+  color: #526f5a;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.presence-submit-btn:disabled {
+  opacity: .7;
+  cursor: wait;
+}
+
+.presence-feedback {
+  display: none;
+  margin: 18px 0 0;
+  padding: 14px 16px;
+  border-radius: 16px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.presence-feedback.show {
+  display: block;
+}
+
+.presence-feedback.success {
+  background: rgba(109, 146, 118, .12);
+  color: var(--success);
+  border: 1px solid rgba(109, 146, 118, .24);
+}
+
+.presence-feedback.error {
+  background: rgba(183, 107, 107, .1);
+  color: var(--error);
+  border: 1px solid rgba(183, 107, 107, .18);
+}
+
+@media (max-width: 768px) {
+  .hero-actions {
+    width: 100%;
+    max-width: 390px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-actions .lux-button {
+    width: 100%;
+  }
+
+  .presence-box {
+    padding: 38px 24px 30px;
+    border-radius: 28px;
+  }
+
+  .presence-box h2 {
+    font-size: 2.4rem;
+  }
+
+  .presence-box p {
+    font-size: 1.05rem;
+  }
+
+  .presence-submit-btn,
+  .presence-form input {
+    min-height: 54px;
+  }
+}
