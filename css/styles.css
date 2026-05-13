@@ -169,7 +169,6 @@ button {
 }
 
 @keyframes orb1 {
-
   0%,
   100% {
     transform: translate(0, 0);
@@ -181,7 +180,6 @@ button {
 }
 
 @keyframes orb2 {
-
   0%,
   100% {
     transform: translate(0, 0);
@@ -193,7 +191,6 @@ button {
 }
 
 @keyframes orb3 {
-
   0%,
   100% {
     transform: translateY(0) scale(1);
@@ -336,7 +333,7 @@ button {
   position: relative;
   min-height: 100vh;
   display: flex;
-  align-items: stretch;
+  align-items: center;
   overflow: hidden;
 }
 
@@ -369,16 +366,17 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 80px 5vw;
+  padding: 54px 4vw 64px;
   text-align: center;
 }
 
 .hero-copy {
-  max-width: 900px;
+  max-width: 980px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transform: translateY(-16px);
 }
 
 .eyebrow,
@@ -391,10 +389,14 @@ button {
   font-size: 1.7rem;
 }
 
+.hero-copy .eyebrow {
+  margin-bottom: 22px;
+}
+
 .hero-copy h1 {
-  margin: 0 0 12px;
+  margin: 0 0 18px;
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(5.8rem, 9.5vw, 10rem);
+  font-size: clamp(5.4rem, 8.4vw, 9.2rem);
   line-height: .92;
   color: var(--brown);
   text-transform: uppercase;
@@ -409,7 +411,6 @@ button {
 }
 
 @keyframes pulseRose {
-
   0%,
   100% {
     opacity: 1;
@@ -423,47 +424,49 @@ button {
 }
 
 .hero-subtitle {
-  margin: 0 0 12px;
+  margin: 0 0 18px;
   font-family: "Cormorant Garamond", serif;
   font-style: italic;
   color: var(--gold-soft);
-  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+  font-size: clamp(2rem, 3.2vw, 3rem);
 }
 
 .hero-text {
-  max-width: 690px;
+  max-width: 720px;
   margin: 0 auto;
   color: var(--text-soft);
-  font-size: 1.7rem;
-  line-height: 1.8;
+  font-size: 1.48rem;
+  line-height: 1.7;
 }
 
 .hero-actions {
-  display: flex;
+  width: min(100%, 980px);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   justify-content: center;
-  align-items: center;
-  gap: 18px;
+  align-items: stretch;
+  gap: 14px;
   margin-top: 34px;
-  flex-wrap: wrap;
 }
 
 .lux-button {
   position: relative;
-  min-height: 74px;
+  min-height: 64px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  padding: 0 38px;
+  gap: 12px;
+  padding: 0 22px;
   border-radius: 999px;
   border: 1px solid rgba(168, 115, 63, .32);
   background: linear-gradient(135deg, #fff8f1, #efd8cb);
   color: var(--brown);
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 1.32rem;
+  font-size: 1.02rem;
   font-weight: 700;
-  letter-spacing: .08em;
+  letter-spacing: .07em;
   line-height: 1.2;
+  text-align: center;
   text-transform: uppercase;
   overflow: hidden;
   box-shadow: 0 16px 38px rgba(96, 60, 36, .14), inset 0 0 0 1px rgba(255, 255, 255, .72);
@@ -477,7 +480,8 @@ button {
 }
 
 .lux-button i {
-  font-size: 1.85rem;
+  font-size: 1.45rem;
+  flex-shrink: 0;
 }
 
 .lux-button::before {
@@ -521,10 +525,26 @@ button {
   border-color: rgba(232, 167, 178, .72);
 }
 
+.hero-dress-button {
+  background: linear-gradient(135deg, #fff7f1, #f4e5d8);
+  border-color: rgba(168, 115, 63, .22);
+  color: #7c5a45;
+}
+
+.hero-dress-button i {
+  color: #a8733f;
+}
+
+.hero-dress-button:hover {
+  background: linear-gradient(135deg, #fff1e8, #ead7c4);
+  border-color: rgba(168, 115, 63, .36);
+  color: var(--brown);
+}
+
 .scroll-indicator {
   position: absolute;
   left: 50%;
-  bottom: 26px;
+  bottom: 22px;
   z-index: 4;
   transform: translateX(-50%);
   text-align: center;
@@ -533,7 +553,6 @@ button {
 }
 
 @keyframes floatIndicator {
-
   0%,
   100% {
     transform: translateX(-50%) translateY(0);
@@ -754,7 +773,6 @@ p,
 }
 
 @keyframes floatingCard {
-
   0%,
   100% {
     transform: translateY(0);
@@ -1216,16 +1234,16 @@ p,
 
 /* CONFIRMAR PRESENÇA - BOTÃO E MODAL */
 .hero-presence-button {
-  min-height: 82px;
-  padding: 0 46px;
-  border: 2px solid rgba(109, 146, 118, .44);
+  min-height: 64px;
+  padding: 0 22px;
+  border: 1px solid rgba(109, 146, 118, .38);
   background: linear-gradient(135deg, #dce8df, #b8cdbd);
   color: #385141;
-  font-size: 1.48rem;
+  font-size: 1.02rem;
   font-weight: 900;
-  letter-spacing: .08em;
+  letter-spacing: .07em;
   box-shadow:
-    0 22px 52px rgba(82, 111, 90, .18),
+    0 16px 38px rgba(82, 111, 90, .15),
     inset 0 0 0 1px rgba(255, 255, 255, .62);
 }
 
@@ -1236,15 +1254,14 @@ p,
 
 .hero-presence-button i {
   color: #526f5a;
-  font-size: 2rem;
 }
 
 .hero-presence-button:hover {
   color: #2f4735;
-  border-color: rgba(109, 146, 118, .6);
+  border-color: rgba(109, 146, 118, .52);
   background: linear-gradient(135deg, #d2e1d6, #a9c2af);
   box-shadow:
-    0 24px 54px rgba(82, 111, 90, .22),
+    0 18px 42px rgba(82, 111, 90, .2),
     inset 0 0 0 1px rgba(255, 255, 255, .68);
 }
 
@@ -1409,9 +1426,17 @@ p,
   border: 1px solid rgba(183, 107, 107, .18);
 }
 
-
 /* RESPONSIVO */
 @media (max-width: 1280px) {
+  .hero-copy {
+    transform: translateY(-10px);
+  }
+
+  .hero-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 720px;
+  }
+
   .details-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1464,16 +1489,50 @@ p,
     width: min(calc(100% - 28px), var(--max));
   }
 
+  .hero-content {
+    min-height: 100vh;
+    padding: 86px 18px 54px;
+  }
+
+  .hero-copy {
+    transform: none;
+    max-width: 430px;
+  }
+
   .hero-copy h1 {
-    font-size: clamp(4.2rem, 19vw, 6.4rem);
+    font-size: clamp(4.1rem, 18vw, 6rem);
+    line-height: .94;
   }
 
   .hero-subtitle {
-    font-size: 2rem;
+    font-size: 1.95rem;
   }
 
   .hero-text {
-    font-size: 1.2rem;
+    font-size: 1.08rem;
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    width: 100%;
+    max-width: 390px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 11px;
+    margin-top: 28px;
+  }
+
+  .hero-actions .lux-button,
+  .hero-presence-button {
+    width: 100%;
+    min-height: 60px;
+    padding: 0 20px;
+    font-size: .92rem;
+    letter-spacing: .05em;
+  }
+
+  .hero-actions .lux-button i {
+    font-size: 1.35rem;
   }
 
   .section-head h2,
@@ -1491,21 +1550,6 @@ p,
   .info-card p,
   .pix-card p {
     font-size: 1.15rem;
-  }
-
-  .lux-button {
-    width: 100%;
-  }
-
-  .hero-actions {
-    width: 100%;
-    max-width: 360px;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .hero-actions .lux-button {
-    width: 100%;
   }
 
   .countdown-grid,
@@ -1613,6 +1657,38 @@ p,
     font-size: 1rem;
     padding: 20px;
   }
+
+  .presence-box {
+    padding: 42px 24px 32px;
+    border-radius: 30px;
+  }
+
+  .presence-box h2 {
+    font-size: 3rem;
+  }
+
+  .presence-box p {
+    font-size: 1.22rem;
+    line-height: 1.58;
+  }
+
+  .presence-form label {
+    font-size: 1rem;
+  }
+
+  .presence-form input {
+    min-height: 64px;
+    font-size: 1.15rem;
+  }
+
+  .presence-form input::placeholder {
+    font-size: 1rem;
+  }
+
+  .presence-submit-btn {
+    min-height: 66px;
+    font-size: 1.12rem;
+  }
 }
 
 @media (max-width: 560px) {
@@ -1648,6 +1724,25 @@ p,
   .hero-content {
     padding-left: 14px;
     padding-right: 14px;
+    padding-top: 76px;
+  }
+
+  .hero-copy h1 {
+    font-size: 4.15rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.65rem;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+  }
+
+  .hero-actions .lux-button,
+  .hero-presence-button {
+    min-height: 56px;
+    font-size: .82rem;
   }
 
   .count-card {
@@ -1681,63 +1776,5 @@ p,
 
   .gallery-item img {
     border-radius: 14px;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-actions {
-    width: 100%;
-    max-width: 430px;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .hero-actions .lux-button {
-    width: 100%;
-    min-height: 68px;
-    padding: 0 24px;
-    font-size: 1.08rem;
-    letter-spacing: .06em;
-  }
-
-  .hero-presence-button {
-    min-height: 76px;
-    font-size: 1.22rem;
-  }
-
-  .hero-actions .lux-button i {
-    font-size: 1.55rem;
-  }
-
-  .presence-box {
-    padding: 42px 24px 32px;
-    border-radius: 30px;
-  }
-
-  .presence-box h2 {
-    font-size: 3rem;
-  }
-
-  .presence-box p {
-    font-size: 1.22rem;
-    line-height: 1.58;
-  }
-
-  .presence-form label {
-    font-size: 1rem;
-  }
-
-  .presence-form input {
-    min-height: 64px;
-    font-size: 1.15rem;
-  }
-
-  .presence-form input::placeholder {
-    font-size: 1rem;
-  }
-
-  .presence-submit-btn {
-    min-height: 66px;
-    font-size: 1.12rem;
   }
 }
