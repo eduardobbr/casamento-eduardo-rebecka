@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  const weddingDate = new Date("2026-07-24T18:40:00-03:00");
+  const weddingDate = new Date("2026-07-24T16:45:00-03:00");
 
   const body = document.body;
   const sideNav = document.getElementById("sideNav");
