@@ -20,6 +20,42 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+
+/* =========================
+   ORDEM DOS PRESENTES
+   Disponíveis primeiro, reservados no final
+========================= */
+
+const giftGrid = document.querySelector(".gift-list-grid");
+const allGiftCards = Array.from(document.querySelectorAll(".gift-product-card"));
+
+allGiftCards.forEach((card, index) => {
+    card.dataset.originalOrder = String(index);
+});
+
+function reorderGiftCards() {
+    if (!giftGrid) return;
+
+    const sortedCards = [...allGiftCards].sort((a, b) => {
+        const aReserved = a.classList.contains("is-bought") ? 1 : 0;
+        const bReserved = b.classList.contains("is-bought") ? 1 : 0;
+
+        if (aReserved !== bReserved) {
+            return aReserved - bReserved;
+        }
+
+        return Number(a.dataset.originalOrder) - Number(b.dataset.originalOrder);
+    });
+
+    const fragment = document.createDocumentFragment();
+
+    sortedCards.forEach((card) => {
+        fragment.appendChild(card);
+    });
+
+    giftGrid.appendChild(fragment);
+}
+
 /* =========================
    CONFIGURAÇÃO PIX
 ========================= */
@@ -307,6 +343,7 @@ document.querySelectorAll(".gift-product-card").forEach((card) => {
         if (!snapshot.exists()) {
             card.classList.remove("is-bought");
             card.classList.remove("just-reserved");
+            reorderGiftCards();
             return;
         }
 
@@ -324,6 +361,8 @@ document.querySelectorAll(".gift-product-card").forEach((card) => {
             card.classList.remove("is-bought");
             card.classList.remove("just-reserved");
         }
+
+        reorderGiftCards();
     });
 
     button.addEventListener("click", async () => {
