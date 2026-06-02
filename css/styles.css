@@ -169,6 +169,7 @@ button {
 }
 
 @keyframes orb1 {
+
   0%,
   100% {
     transform: translate(0, 0);
@@ -180,6 +181,7 @@ button {
 }
 
 @keyframes orb2 {
+
   0%,
   100% {
     transform: translate(0, 0);
@@ -191,6 +193,7 @@ button {
 }
 
 @keyframes orb3 {
+
   0%,
   100% {
     transform: translateY(0) scale(1);
@@ -411,6 +414,7 @@ button {
 }
 
 @keyframes pulseRose {
+
   0%,
   100% {
     opacity: 1;
@@ -553,6 +557,7 @@ button {
 }
 
 @keyframes floatIndicator {
+
   0%,
   100% {
     transform: translateX(-50%) translateY(0);
@@ -773,6 +778,7 @@ p,
 }
 
 @keyframes floatingCard {
+
   0%,
   100% {
     transform: translateY(0);
@@ -829,6 +835,14 @@ p,
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
+}
+
+.details-note {
+  margin: 24px auto 0;
+  max-width: 720px;
+  text-align: center;
+  font-size: inherit;
+  line-height: 1.7;
 }
 
 .info-card {
