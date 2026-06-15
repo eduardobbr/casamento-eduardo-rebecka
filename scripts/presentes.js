@@ -23,7 +23,9 @@ const db = getFirestore(app);
 
 /* =========================
    ORDEM DOS PRESENTES
-   Disponíveis primeiro, reservados no final
+   Fotógrafo primeiro,
+   disponíveis por menor valor,
+   reservados no final
 ========================= */
 
 const giftGrid = document.querySelector(".gift-list-grid");
@@ -33,15 +35,62 @@ allGiftCards.forEach((card, index) => {
     card.dataset.originalOrder = String(index);
 });
 
+function parseGiftPriceToNumber(value) {
+    if (!value) return Number.MAX_SAFE_INTEGER;
+
+    const cleanValue = String(value)
+        .replace(/[^\d,.-]/g, "")
+        .replace(/\./g, "")
+        .replace(",", ".");
+
+    const numberValue = Number.parseFloat(cleanValue);
+
+    return Number.isFinite(numberValue) ? numberValue : Number.MAX_SAFE_INTEGER;
+}
+
+function isSpecialGiftCard(card) {
+    const giftId = card.dataset.giftId || "";
+
+    return (
+        giftId === "fotografo-casamento" ||
+        card.classList.contains("gift-special-card") ||
+        card.dataset.pixFree === "true"
+    );
+}
+
+function getGiftCardPrice(card) {
+    if (isSpecialGiftCard(card)) {
+        return -1;
+    }
+
+    const priceElement = card.querySelector(".gift-product-price strong");
+
+    return parseGiftPriceToNumber(priceElement?.textContent);
+}
+
 function reorderGiftCards() {
     if (!giftGrid) return;
 
     const sortedCards = [...allGiftCards].sort((a, b) => {
+        const aSpecial = isSpecialGiftCard(a) ? 0 : 1;
+        const bSpecial = isSpecialGiftCard(b) ? 0 : 1;
+
+        if (aSpecial !== bSpecial) {
+            return aSpecial - bSpecial;
+        }
+
         const aReserved = a.classList.contains("is-bought") ? 1 : 0;
         const bReserved = b.classList.contains("is-bought") ? 1 : 0;
 
         if (aReserved !== bReserved) {
             return aReserved - bReserved;
+        }
+
+        const aPrice = getGiftCardPrice(a);
+        const bPrice = getGiftCardPrice(b);
+
+        if (aPrice !== bPrice) {
+            return aPrice - bPrice;
         }
 
         return Number(a.dataset.originalOrder) - Number(b.dataset.originalOrder);
@@ -55,6 +104,9 @@ function reorderGiftCards() {
 
     giftGrid.appendChild(fragment);
 }
+
+reorderGiftCards();
+
 
 /* =========================
    CONFIGURAÇÃO PIX
@@ -308,6 +360,7 @@ document.addEventListener("keydown", (event) => {
     }
 });
 
+
 /* =========================
    PRESENTEAR VIA PIX
 ========================= */
@@ -321,6 +374,7 @@ document.querySelectorAll(".gift-product-card").forEach((card) => {
         openPixModal(card, pixButton);
     });
 });
+
 
 /* =========================
    RESERVA DE PRESENTES
@@ -406,6 +460,7 @@ document.querySelectorAll(".gift-product-card").forEach((card) => {
             sessionStorage.setItem(`giftReserved_${giftId}`, "true");
             card.classList.add("just-reserved");
             input.value = "";
+            reorderGiftCards();
         } catch (error) {
             console.error("Erro ao reservar presente:", error);
             alert("Não foi possível reservar agora. Tente novamente.");
